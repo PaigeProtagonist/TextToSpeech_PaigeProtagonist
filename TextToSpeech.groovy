@@ -10,9 +10,9 @@ int chunkSize =500
 
 int numChunks = contents.size()/chunkSize
 
-for(int i=0;i<contents.size() && !Thread.interrupted();i+=chunkSize){
-
-	println "Chunk number "+i;
+//for(int i=0;i<contents.size() && !Thread.interrupted();i+=chunkSize){
+for(int i=0;i<500&& !Thread.interrupted();i+=chunkSize){
+     println "Chunk number 500"
 	BowlerStudio.speak(contents.substring(i,i+500))
 	Thread.sleep(1)
 }
