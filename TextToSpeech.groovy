@@ -4,6 +4,15 @@ File f = new File(location)
 
 String contents = f.text
 
-//println contents
+println "Starting to speak"
 
-BowlerStudio.speak(contents.substring(0,500))
+int chunkSize =500
+
+int numChunks = contents.size()/chunkSize
+
+for(int i=0;i<contents.size() && !Thread.interrupted();i+=chunkSize){
+	println "Chunk number "+i;
+	BowlerStudio.speak(contents.substring(i,i+500))
+	Thread.sleep(1)
+}
+
